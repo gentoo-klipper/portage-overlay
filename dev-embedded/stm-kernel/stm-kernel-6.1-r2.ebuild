@@ -16,7 +16,10 @@ DEPEND="
 	sys-kernel/linux-firmware
 "
 RDEPEND="${DEPEND}"
-BDEPEND=""
+BDEPEND="
+	sys-kernel/linux-firmware
+	net-wireless/wireless-regdb
+"
 
 S=${WORKDIR}/linux-${PV}-stm32mp
 
