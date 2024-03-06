@@ -40,7 +40,7 @@ src_compile() {
 
 src_install() {
 	cd ${S}
-	emake ${CROSS} modules_install INSTALL_MOD_PATH=${D}/lib/modules/
+	emake ${CROSS} modules_install INSTALL_MOD_PATH=${D}/
 	emake ${CROSS} dtbs_install INSTALL_DTBS_PATH=${D}/boot/dtbs
 	emake ${CROSS} install INSTALL_PATH=${D}/boot/
 	cp arch/arm/boot/zImage ${D}/boot/vmlinuz
