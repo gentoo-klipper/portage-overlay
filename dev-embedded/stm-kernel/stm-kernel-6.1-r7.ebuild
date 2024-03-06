@@ -13,7 +13,6 @@ SLOT="0"
 KEYWORDS="arm"
 
 DEPEND="
-	sys-kernel/linux-firmware
 "
 RDEPEND="${DEPEND}"
 BDEPEND=""
@@ -21,8 +20,6 @@ BDEPEND=""
 S=${WORKDIR}/linux-${PV}-stm32mp
 
 CROSS="ARCH=arm CROSS_COMPILE=armv7a-hardfloat-linux-gnueabi-"
-
-IUSE="+dummy1"
 
 src_configure() {
 	cd ${S}
