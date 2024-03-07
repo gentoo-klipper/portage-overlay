@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+# Copyright 2024 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+name="Moonraker is a python based web server that exposes APIs that applications may use to interact with Klipper"
+description=""
+
+command=/opt/moonraker/moonraker/moonraker.py
+command_args="${moonraker_args}"
+
+supervisor="supervise-daemon"
+pidfile="/run/moonraker.pid"
+
+
+depend() {
+	use net	
+	after klipper
+}
+
+

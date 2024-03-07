@@ -1,0 +1,1 @@
+moonraker_args="--configfile /etc/klipper/moonraker.conf --nologfile"

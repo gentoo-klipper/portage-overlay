@@ -1,0 +1,19 @@
+#!/sbin/openrc-run
+# Copyright 2024 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+name="3d-Printer firmware, which combines the power of a general purpose computer with one or more micro-controllers"
+description=""
+
+command=/opt/klipper/klippy/klippy.py
+command_args="${klipper_args}"
+
+supervisor="supervise-daemon"
+pidfile="/run/klipper.pid"
+
+
+depend() {
+	use net	
+}
+
+
