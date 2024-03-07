@@ -1,0 +1,1 @@
+klipper_mcu_args="-r -I /run/klipper-host-mcu.serial"

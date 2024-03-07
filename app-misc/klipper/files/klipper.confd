@@ -1,1 +1,1 @@
-klipper_args="/etc/klipper/printer.cfg --api-server=/run/klipper/klipper.sock  --logfile=/var/log/klipper/klipper.log"
+klipper_args="/etc/klipper/printer.cfg --api-server=/run/klipper.sock  --logfile=/var/log/klipper/klipper.log"

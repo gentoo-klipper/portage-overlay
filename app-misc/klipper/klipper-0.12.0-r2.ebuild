@@ -16,7 +16,7 @@ LICENSE=""
 SLOT="0"
 KEYWORDS="amd64 arm amr64"
 
-IUSE="doc examples"
+IUSE="doc examples +hostmcu"
 
 DEPEND="
 	dev-python/pyserial
@@ -37,7 +37,12 @@ BDEPEND="
 DOCS=( COPYING )
 
 src_compile() {
-	:
+	if use hostmcu
+	then
+		cp ${FILESDIR}/config.host .config
+		emake
+		cp out/klipper.elf klipper-mcu
+	fi
 }
 
 src_install() {
@@ -48,6 +53,19 @@ src_install() {
 	if use examples; then
 		insinto "/usr/share/${PN}/examples"
 		doins -r config/*
+	fi
+
+	insinto /etc/klipper
+	doins ${FILESDIR}/printer.cfg
+
+	if use hostmcu
+	then
+		dosbin klipper-mcu
+		newinitd "${FILESDIR}/klipper-mcu.initd" klipper-mcu
+	    newconfd "${FILESDIR}/klipper-mcu.confd" klipper-mcu
+		insinto /etc/klipper
+		doins ${FILESDIR}/hostmcu.cfg
+		echo "[include hostmcu.cfg]" >> ${D}/etc/klipper/printer.cfg
 	fi
 
 	# currently only these are python3 compatible or have missing dependencies

@@ -3,18 +3,17 @@
 # Distributed under the terms of the GNU General Public License v2
 
 description="3d-Printer firmware, which combines the power of a general purpose computer with one or more micro-controllers"
-name="klipper"
+name="klipper-mcu"
 
-command=/opt/klipper/klippy/klippy.py
-command_args="${klipper_args}"
+command=/usr/sbin/klipper-mcu
+command_args="${klipper_mcu_args}"
 
 supervisor="supervise-daemon"
-pidfile="/run/klipper.pid"
+pidfile="/run/klipper-mcu.pid"
 
 
 depend() {
 	use net	
-	after klipper-mcu
 }
 
 
