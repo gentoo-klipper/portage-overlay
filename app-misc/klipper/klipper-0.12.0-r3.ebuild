@@ -40,9 +40,15 @@ src_compile() {
 	if use hostmcu
 	then
 		cp ${FILESDIR}/config.host .config
-		emake
+		emake CROSS_PREIX="${CHOST}-"
 		cp out/klipper.elf klipper-mcu
 	fi
+
+	cd klippy/chelper
+	local cflags = "-Wall -g -O2 -shared -fPIC -flto -fwhole-program -fno-use-linker-plugin"
+	local sources = "pyhelper.c serialqueue.c stepcompress.c itersolve.c trapq.c pollreactor.c msgblock.c trdispatch.c kin_cartesian.c kin_corexy.c kin_corexz.c kin_delta.c kin_deltesian.c kin_polar.c kin_rotary_delta.c kin_winch.c kin_extruder.c kin_shaper.c kin_idex.c"
+
+	${CHOST}-gcc $cflags -o c_helper.so $sources
 }
 
 src_install() {
