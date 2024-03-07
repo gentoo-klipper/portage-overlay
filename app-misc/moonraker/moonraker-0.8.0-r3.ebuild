@@ -53,7 +53,7 @@ src_install() {
 	python_fix_shebang "${D}/opt/moonraker/moonraker/moonraker.py" || die
 
 	newinitd "${FILESDIR}/moonraker.initd" moonraker
-	newinitd "${FILESDIR}/moonraker.confd" moonraker
+	newconfd "${FILESDIR}/moonraker.confd" moonraker
 }
 
 pkg_postinst() {
