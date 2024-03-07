@@ -1,1 +1,1 @@
-moonraker_args="--configfile /etc/klipper/moonraker.conf --nologfile"
+moonraker_args="--configfile /etc/klipper/moonraker.conf --logfile /var/log/klipper/moonraker.log
