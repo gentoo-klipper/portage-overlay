@@ -9,7 +9,7 @@ HOMEPAGE="https://community.murata.com/"
 inherit git-r3
 
 EGIT_REPO_URI="https://github.com/murata-wireless/cyw-fmac-nvram.git"
-EGIT_REPO_COMMIT="8710e74e79470f666912c3ccadf1e354d6fb209c"
+EGIT_REPO_COMMIT="c75ea2d41e39e0d6cf6b2ae7e65e81c57bf16670"
 
 SLOT="0"
 KEYWORDS="arm"
