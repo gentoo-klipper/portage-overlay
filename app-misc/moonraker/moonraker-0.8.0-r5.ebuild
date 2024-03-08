@@ -33,6 +33,7 @@ RDEPEND="${DEPEND}
 	dev-python/jinja
 	dev-python/dbus-next
 	dev-python/ldap3
+	dev-python/smart_open
 
 	$(python_gen_cond_dep '
 		>=dev-python/pillow-8.0.1[${PYTHON_USEDEP}]
@@ -42,7 +43,6 @@ RDEPEND="${DEPEND}
 #pyserial-asyncio ?
 #preprocess-cancellatio
 # python-periphery==2.4.1
-# smart_open
 
 
 DOCS=( LICENSE docs/api_changes.md )

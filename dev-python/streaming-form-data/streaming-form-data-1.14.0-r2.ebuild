@@ -37,3 +37,13 @@ BDEPEND="
 	dev-python/packaging[${PYTHON_USEDEP}]
 "
 
+
+python_compile() {
+	if [ "${CHOST}" != "${CBUILD}" ]
+    then
+		export PREFIX=${ESYSROOT}
+    fi
+
+	distutils-r1_python_compile
+}
+
