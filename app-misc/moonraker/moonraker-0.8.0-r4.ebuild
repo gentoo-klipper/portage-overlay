@@ -23,10 +23,27 @@ DEPEND="
 RDEPEND="${DEPEND}
 	${PYTHON_DEPS}
 	app-misc/klipper
+	dev-python/streaming-form-data
+	dev-python/lmdb
+	dev-python/distro
+	dev-python/inotify_simple
+	dev-python/libnacl
+	dev-python/paho-mqtt
+	dev-python/zeroconf
+	dev-python/jinja
+	dev-python/dbus-next
+	dev-python/ldap3
+
 	$(python_gen_cond_dep '
 		>=dev-python/pillow-8.0.1[${PYTHON_USEDEP}]
 		>=dev-python/pyserial-3.4[${PYTHON_USEDEP}]
 		>=dev-python/tornado-6.2[${PYTHON_USEDEP}]')"
+
+#pyserial-asyncio ?
+#preprocess-cancellatio
+# python-periphery==2.4.1
+# smart_open
+
 
 DOCS=( LICENSE docs/api_changes.md )
 
