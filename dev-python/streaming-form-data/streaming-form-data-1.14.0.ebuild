@@ -18,19 +18,20 @@ SLOT="0"
 KEYWORDS="amd64 arm64 x86 arm"
 
 RDEPEND="
-	dev-python/black[${PYTHON_USEDEP}]
 	dev-python/cython[${PYTHON_USEDEP}]
-	dev-python/mkdocs[${PYTHON_USEDEP}]
-	dev-python/moto[${PYTHON_USEDEP}]
-	dev-python/mypy[${PYTHON_USEDEP}]
 	dev-python/requests-toolbelt[${PYTHON_USEDEP}]
-	dev-python/twine[${PYTHON_USEDEP}]
 	dev-python/urllib3[${PYTHON_USEDEP}]
 	dev-python/wheel[${PYTHON_USEDEP}]
 	dev-python/wrapt[${PYTHON_USEDEP}]
 "
 
+#  dev-python/moto[${PYTHON_USEDEP}]
 # dev-python/ruff?
+# dev-python/mypy[${PYTHON_USEDEP}]
+# dev-python/black[${PYTHON_USEDEP}]
+#  dev-python/mkdocs[${PYTHON_USEDEP}]
+#   dev-python/twine[${PYTHON_USEDEP}]
+
 
 BDEPEND="
 	dev-python/packaging[${PYTHON_USEDEP}]
